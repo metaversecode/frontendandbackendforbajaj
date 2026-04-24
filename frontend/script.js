@@ -1,5 +1,4 @@
-var API_URL = window.location.protocol === 'file:' ? 'http://localhost:3000/bfhl' : '/bfhl';
-
+const API_URL = 'https://bajajbysuraj-393132607139.europe-west1.run.app/bfhl';
 const inputEl = document.getElementById('data-input');
 const btnSubmit = document.getElementById('btn-submit');
 const btnExample = document.getElementById('btn-example');
