@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: bfhl-api
+    runtime: node
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production

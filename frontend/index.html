@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BFHL — Hierarchy Processor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="container header-row">
+      <span class="logo">BFHL</span>
+      <span class="tagline">Hierarchy Processor</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="input-section">
+      <h1>Process Node Edges</h1>
+      <p class="desc">Enter parent-child relationships like <code>A->B</code> separated by commas, or paste a JSON array.</p>
+
+      <textarea
+        id="data-input"
+        rows="6"
+        spellcheck="false"
+        placeholder='A->B, A->C, B->D, C->E, E->F'
+      ></textarea>
+
+      <div class="btn-row">
+        <button id="btn-example" class="btn-outline">Load Example</button>
+        <button id="btn-clear" class="btn-outline">Clear</button>
+        <button id="btn-submit" class="btn-primary">
+          <span id="btn-text">Submit</span>
+          <span id="btn-loader" class="loader" hidden></span>
+        </button>
+      </div>
+
+      <div id="error-box" class="error-box" hidden>
+        <span id="error-msg"></span>
+      </div>
+    </section>
+
+    <section id="results" hidden>
+      <div class="result-block" id="identity-block"></div>
+
+      <div class="stats-row" id="stats-row"></div>
+
+      <h2>Hierarchies</h2>
+      <div id="hierarchy-list"></div>
+
+      <div class="two-col">
+        <div class="result-block">
+          <h3>Invalid Entries</h3>
+          <div id="invalid-list" class="tag-list"></div>
+        </div>
+        <div class="result-block">
+          <h3>Duplicate Edges</h3>
+          <div id="duplicate-list" class="tag-list"></div>
+        </div>
+      </div>
+
+      <details class="json-details">
+        <summary>View Raw JSON</summary>
+        <pre id="raw-json"></pre>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Suraj. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
